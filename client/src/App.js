@@ -1,4 +1,5 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 // PAGES
 import LandingPage from "./pages/landing/landing.pages";
@@ -10,10 +11,16 @@ import BooksPage from "./pages/books/books.pages";
 
 // COMPONENTS
 // import Copyright from "./components/common/Copyright/copyright.component";
+import Header from "./components/navbar/header.component";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const history = useHistory();
+
+  console.log(history);
   return (
     <div>
+      {isAuthenticated && <Header isAuthenticated={isAuthenticated} />}
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/auth/admin/signup" component={AdminSignupPage} />
