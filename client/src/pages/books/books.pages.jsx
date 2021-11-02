@@ -1,39 +1,66 @@
-import React, { useState } from "react";
+import { Grid } from "@mui/material";
+import { useState } from "react";
 import styled from "styled-components";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
-import { Box } from "@mui/system";
-export default function InputWithIcon() {
-  const [value, setValue] = useState("");
+import BookCard from "../../components/bookCard/bookCard.component";
+import BookSearch from "../../components/common/searchbar/bookSearch.component";
 
+export default function InputWithIcon() {
   return (
-    <SearchContainer
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "100ch" },
-      }}
-    >
-      <TextField
-        placeholder="Search books author, title, isbn"
-        type="text"
-        variant="standard"
-        fullWidth
-        onChange={(e) => setValue(e.target.value)}
-        value={value}
-        InputProps={{
-          endAdornment: value && (
-            <IconButton aria-label="toggle password visibility" onClick={() => setValue("")}>
-              <CancelRoundedIcon />
-            </IconButton>
-          ),
-        }}
-      />
-    </SearchContainer>
+    <BookPageContainer>
+      <BookSearch />
+
+      <BookDisplayContainer>
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+          <Grid item xs={12} sm={4} md={3}>
+            <BookCard />
+          </Grid>
+        </Grid>
+      </BookDisplayContainer>
+    </BookPageContainer>
   );
 }
 
-const SearchContainer = styled(Box)`
+const BookPageContainer = styled.div`
   display: flex;
-  justify-content: center;
-  padding: 20px 10px;
+  flex-direction: column;
+`;
+
+const BookDisplayContainer = styled.div`
+  margin: 20px 60px;
 `;

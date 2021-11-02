@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import styled from "styled-components";
 
-import HrefButton from "../../components/common/HrefButton/HrefButton.component";
+import LinkButton from "../../components/common/linkButton/linkButton.component";
 
 import LandingButtonData from "./landingButtonData";
 
@@ -16,7 +16,7 @@ function LandingPage() {
       <Container maxWidth="xs">
         <Grid direction="column" container spacing={3}>
           {LandingButtonData.map((data, idx) => (
-            <HrefButton key={idx} path={data.path} text={data.text} />
+            <LinkButton key={idx} path={data.path} text={data.text} />
           ))}
         </Grid>
       </Container>

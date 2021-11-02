@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function HrefButton({ path, text, variant = "contained", color = "primary" }) {
+function LinkButton({ path, text, variant = "contained", color = "primary" }) {
   const classes = useStyles();
 
   return (
@@ -29,4 +29,4 @@ function HrefButton({ path, text, variant = "contained", color = "primary" }) {
   );
 }
 
-export default HrefButton;
+export default LinkButton;

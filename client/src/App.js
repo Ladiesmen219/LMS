@@ -17,17 +17,18 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const history = useHistory();
 
-  console.log(history);
   return (
     <div>
-      {isAuthenticated && <Header isAuthenticated={isAuthenticated} />}
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/auth/admin/signup" component={AdminSignupPage} />
         <Route exact path="/auth/admin/login" component={AdminLoginPage} />
         <Route exact path="/auth/user/signup" component={UserSignupPage} />
         <Route exact path="/auth/user/login" component={UserLoginPage} />
-        <Route exact path="/books" component={BooksPage} />
+        <div>
+          <Header isAuthenticated={isAuthenticated} />
+          <Route exact path="/books" component={BooksPage} />
+        </div>
       </Switch>
       {/* <Copyright /> */}
     </div>
