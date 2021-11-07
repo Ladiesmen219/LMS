@@ -1,5 +1,5 @@
 import { Switch, Route, useHistory } from "react-router-dom";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useState } from "react";
 
 // PAGES
 import LandingPage from "./pages/landing/landing.pages";
@@ -15,7 +15,7 @@ import Header from "./components/navbar/header.component";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
-  const history = useHistory();
+  // const history = useHistory();
 
   return (
     <div>
